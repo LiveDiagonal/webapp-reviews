@@ -1,0 +1,30 @@
+doctype html
+block vars
+  - var bodyclass = null;
+html(lang='en')
+  head
+    block head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+      meta(name='viewport', content='width=device-width')
+      title
+        block title
+          = locals.name
+      link(rel='alternate', href=locals.url+'/feed.xml', type='application/rss+xml', title=locals.description)
+      link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Anonymous+Pro:400,700,400italic,700italic|Merriweather:400,700,300')
+      link(rel='stylesheet', href=contents.css['uikit.vivace.css'].url)
+  body(class=bodyclass)
+    header.header
+      div.uk-container
+        div.uk-section.uk-section-small.uk-text-center
+          div Live Diagonal
+          div.uk-margin-large-top
+            block header
+
+    div.uk-container.uk-container-small
+      div.uk-section.uk-section-default
+        block content
+    footer
+      div.uk-text-center
+        block footer
+          a(href='http://www.livediagonal.com') Live Diagonal

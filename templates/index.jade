@@ -1,0 +1,12 @@
+
+extends layout
+//- this logic should be moved to a view at some point
+
+block content
+  - var reviews = env.helpers.getReviews(contents)
+  section.archive
+    h2 Reviews
+    ul
+      each review in reviews
+        li 
+          a(href=review.url)= review.title
