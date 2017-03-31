@@ -1,0 +1,16 @@
+box: node
+
+build:
+  steps:
+    - npm-install
+    - script:
+        name: wintersmith build 
+        code: ./node_modules/.bin/wintersmith build -o ./build
+
+deploy:
+    steps:
+        - s3sync:
+            key-id: $S3_ACCESS_KEY_ID
+            key-secret: $S3_SECRET_KEY
+            bucket-url: $S3_BUCKET_NAME
+            source-dir: build
