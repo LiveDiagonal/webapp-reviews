@@ -1,0 +1,5 @@
+.live-diagonal {
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	transform: rotate(-1deg);
+}
